@@ -19,8 +19,9 @@ namespace HobanBookingSys
             return new string[5];
         }
 
-        private async Task WriteToFile(string Path)
+        protected async Task WriteToFile(string Path)
         {
+
             //using (StreamWriter file = new StreamWriter("logins.txt", true));
             //await file.WriteLineAsync("insert line");
 
