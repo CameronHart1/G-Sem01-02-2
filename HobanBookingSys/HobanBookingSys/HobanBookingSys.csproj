@@ -96,5 +96,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DBfiles\LoginAuthFile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DBfiles\AccountDataFile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DBfiles\BookingsFile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DBfiles\SlotFile.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
