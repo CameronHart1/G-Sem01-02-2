@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HobanBookingSys.Classes
+namespace HobanBookingSys
 {
     class StringArrayConverter
     {
-        public static string ConvertToString(string[] inArray)
+        public string ConvertToString(string[] inArray)
         {
             string tempString = "";
             foreach (string entry in inArray)
             {
-                tempString
+                tempString += $"{entry}|";
             }
 
-                return tempString;
+            return tempString.Remove(tempString.Length - 1);
         }
     }
 }
