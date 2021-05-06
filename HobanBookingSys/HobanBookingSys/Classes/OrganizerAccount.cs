@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace HobanBookingSys
 {
     class OrganizerAccount : Account
     {
-        string OrganizedSession;
+        string[] OrganizedSession;
         int SessionsMade;
         string Password;
         
 
-        public OrganizerAccount(string _KeyIdentifier, bool IsOrganizer, String OrganizedSession, int SessionsMade, string Password) : base(_KeyIdentifier, true)
+        public OrganizerAccount(string _KeyIdentifier, bool IsOrganizer, string[] OrganizedSession, int SessionsMade, string Password) : base(_KeyIdentifier, true)
         {
             this.OrganizedSession = OrganizedSession;
             this.SessionsMade = SessionsMade;
@@ -19,7 +21,7 @@ namespace ConsoleApp1
         }
 
 
-        public override string ToString() => $"{KeyId},{OrganizedSession},{SessionsMade},{Password}";
+        public override string ToString() => $"{KeyId},{ConvertToString(OrganizedSession)},{SessionsMade},{Password}";
 
 
     }
