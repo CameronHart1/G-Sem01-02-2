@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace HobanBookingSys
 {
     class StudentAccount : Account
     {
-        private String Name;
-        private String Email;
-        private String BookedSlots;
+        private string Name;
+        private string Email;
+        private string[] BookedSlots;
         
 
-        public StudentAccount(String _KeyIdentifier, bool IsOrganizer, String Name, String Email, String BookedSlots) : base(_KeyIdentifier, false)
+        public StudentAccount(string _KeyIdentifier, bool IsOrganizer, string Name, string Email, string[] BookedSlots) : base(_KeyIdentifier, false)
         {
             
             this.Name = Name;
@@ -19,7 +21,7 @@ namespace ConsoleApp1
             this.BookedSlots = BookedSlots;
         }
 
-        public override string ToString() => $"{KeyId},{Name},{Email},{BookedSlots}";
+        public override string ToString() => $"{KeyId},{Name},{Email},{ConvertToString(BookedSlots)}";
         
 
     }

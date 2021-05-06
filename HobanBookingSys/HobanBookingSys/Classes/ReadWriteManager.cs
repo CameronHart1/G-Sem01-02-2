@@ -76,7 +76,10 @@ namespace HobanBookingSys
             }
 
             File.Delete(TmpPath);
+
         }
+
+
 
         // this was for the async code, although im not sure how to make it work as it just freezes program
 
