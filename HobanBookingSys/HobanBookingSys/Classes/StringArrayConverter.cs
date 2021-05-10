@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace HobanBookingSys
 {
-    class StringArrayConverter
+    public class StringListConverter
     {
-        public string ConvertToString(string[] inArray)
+        // combines all the array elements, with | as the divisor
+        public string ConvertToString(List<string> inArray)
         {
             string tempString = "";
             foreach (string entry in inArray)
@@ -17,6 +18,12 @@ namespace HobanBookingSys
             }
 
             return tempString.Remove(tempString.Length - 1);
+        }
+
+        // splits the string using | as the splitter
+        public List<string> ListFromString(string inString)
+        {
+            return inString.Split('|').ToList<string>();
         }
     }
 }

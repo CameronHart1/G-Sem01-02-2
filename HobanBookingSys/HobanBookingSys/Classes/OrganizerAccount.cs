@@ -6,14 +6,21 @@ using System.Threading.Tasks;
 
 namespace HobanBookingSys
 {
-    class OrganizerAccount : Account
+    public class OrganizerAccount : Account
     {
-        string[] OrganizedSession;
-        int SessionsMade;
-        string Password;
-        
+        private List<string> OrganizedSession;
+        private int SessionsMade;
+        private string Password;
 
-        public OrganizerAccount(string _KeyIdentifier, bool IsOrganizer, string[] OrganizedSession, int SessionsMade, string Password) : base(_KeyIdentifier, true)
+        public string GetPassword() => Password;
+
+        public void AddSession(string SessionId)
+        {
+            OrganizedSession.Add(SessionId);
+            SessionsMade++;
+        }
+
+        public OrganizerAccount(string _KeyIdentifier, bool IsOrganizer, List<string> OrganizedSession, int SessionsMade, string Password) : base(_KeyIdentifier, true)
         {
             this.OrganizedSession = OrganizedSession;
             this.SessionsMade = SessionsMade;
