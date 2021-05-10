@@ -84,15 +84,25 @@ namespace HobanBookingSys
                 else
                 {
                     App.Current.Properties["AccessedAccount"] = RefAcountDB.Login(KeyIdBox.Text.ToString());
+                    
+
                 }
 
 
             }
             else
             {
-                MessageBox.Show("Account not found");
+                var NewStudentPop = new PopUpNewStudent();
+
+                if(NewStudentPop.ShowDialog().Value)
+                {
+                    RefAcountDB.AddStudentAccount(KeyIdBox.Text.ToString(), NewStudentPop.NameEnter, NewStudentPop.EmailEnter);
+                }
+
+
             }
         }
+
 
     }
 }

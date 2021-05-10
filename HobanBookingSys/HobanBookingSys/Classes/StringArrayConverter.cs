@@ -16,8 +16,11 @@ namespace HobanBookingSys
             {
                 tempString += $"{entry}|";
             }
-
-            return tempString.Remove(tempString.Length - 1);
+            if (tempString.Length > 0)
+            {
+                return tempString.Remove(tempString.Length - 1);
+            }
+            return "";
         }
 
         // splits the string using | as the splitter
