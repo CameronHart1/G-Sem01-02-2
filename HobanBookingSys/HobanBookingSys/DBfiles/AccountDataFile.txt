@@ -2,3 +2,4 @@ UserDemo,thre|jon|test|maybe|something,5,Password
 19053442,StudentDemo,place@thing.com,jon|test
 90238532,EmptyStudent,something@place,
 UserEmpty,,0,PasswordTwo
+95730284,Frank,CoolDude@DailyMail.org,
