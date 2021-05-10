@@ -6,22 +6,24 @@ using System.Threading.Tasks;
 
 namespace HobanBookingSys
 {
-    class Account : StringArrayConverter
+    public class Account : StringListConverter
     {
         private string _KeyIdentifier;
-        bool IsOrganizer;
+        public readonly bool IsOrganizer;
         
-        public Account(String _KeyIdentifier, bool IsOrganizer)
+        // initializer these 2 variables will be avaliable in any account
+        public Account(string _KeyIdentifier, bool IsOrganizer)
         {
             this._KeyIdentifier = _KeyIdentifier;
             this.IsOrganizer = IsOrganizer;
         }
 
-
+        // readonly property
         public string KeyId
         {
             get => _KeyIdentifier;
         }
+
 
     }
 }

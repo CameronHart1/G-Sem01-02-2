@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="326,303,0,0" VerticalAlignment="Top" Width="167" Height="58" Click="LoginButton_Click"/>
+        <TextBox x:Name="KeyIdBox" HorizontalAlignment="Left" Height="30" Margin="326,134,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="162" TextChanged="KeyIdBox_TextChanged"/>
+        <Label x:Name="LoginLabelOne" Content="UserName / Student Id" HorizontalAlignment="Left" Margin="337,103,0,0" VerticalAlignment="Top" Width="151"/>
+        <Label x:Name="LoginLabelTwo" Content="Password" HorizontalAlignment="Left" Margin="375,186,0,0" VerticalAlignment="Top" Width="102" IsEnabled="False"/>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="326,217,0,0" VerticalAlignment="Top" Width="162" Height="32" RenderTransformOrigin="0.481,-0.677"/>
+
     </Grid>
 </Window>

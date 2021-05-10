@@ -6,23 +6,27 @@ using System.Threading.Tasks;
 
 namespace HobanBookingSys
 {
-    class StudentAccount : Account
+    public class StudentAccount : Account
     {
-        private string Name;
+        public string Name;
         private string Email;
-        private string[] BookedSlots;
-        
+        private List<string> BookedSlots;
 
-        public StudentAccount(string _KeyIdentifier, bool IsOrganizer, string Name, string Email, string[] BookedSlots) : base(_KeyIdentifier, false)
+        public void AddBooking(string Id)
         {
-            
+            BookedSlots.Add(Id);
+        }
+
+
+        public StudentAccount(string _KeyIdentifier, bool IsOrganizer, string Name, string Email, List<string> BookedSlots) : base(_KeyIdentifier, false)
+        {
             this.Name = Name;
             this.Email = Email;
             this.BookedSlots = BookedSlots;
         }
 
         public override string ToString() => $"{KeyId},{Name},{Email},{ConvertToString(BookedSlots)}";
-        
+
 
     }
 }

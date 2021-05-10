@@ -7,7 +7,7 @@ using System.IO;
 
 namespace HobanBookingSys
 {
-    class ReadWriteManager
+    public class ReadWriteManager:StringListConverter
     {
 
         // Paths should be @"..\..\DBfiles\*file*.txt"
@@ -43,16 +43,19 @@ namespace HobanBookingSys
 
             using (var sw = new StreamWriter(TmpPath))
             {
-
-                foreach (string line in Content)
+                // need a for loop as the first item is written on the first line, and then every other writes onto the next line
+                for(int i = 0; i < Content.Length; i++)
                 {
+                    
                     try
                     {
-                        sw.Write($"{line}{Environment.NewLine}");
+                        if (i == 0) sw.Write($"{Content[i]}");
+                        else sw.Write($"{Environment.NewLine}{Content[i]}");
+
                     }
                     catch (IOException ioex)
                     {
-                        Console.WriteLine(line);
+                        Console.WriteLine(Content[i]);
                         Console.WriteLine(ioex.Message);
                     }
                 }
